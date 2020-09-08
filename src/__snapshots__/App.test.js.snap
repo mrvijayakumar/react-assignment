@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="loading"
+  >
+    <div
+      class="loading-content"
+    >
+      Loading... please wait...!
+    </div>
+  </div>
+  <div
+    class="modal "
+  >
+    <div
+      class="modal-content"
+    >
+      <span
+        class="close-button"
+      >
+        ×
+      </span>
+      <p>
+        <strong>
+          Country Name :
+        </strong>
+         undefined
+      </p>
+      <p>
+        <strong>
+          Capital :
+        </strong>
+         undefined
+      </p>
+      <p>
+        <strong>
+          Population :
+        </strong>
+         undefined
+      </p>
+      <p>
+        <strong>
+          Language :
+        </strong>
+         
+      </p>
+      <p>
+        <strong>
+          Currency :
+        </strong>
+         
+      </p>
+      <p
+        style="text-align: center;"
+      >
+        <button
+          class="btn"
+          type="button"
+        >
+          Ok
+        </button>
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
