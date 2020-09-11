@@ -96,5 +96,7 @@ const props = {
     }
   };
 test('render correctly' , () => {
-    render(<ModelWindow  {...props} />)
+    render(<ModelWindow  {...props}  />)
 })
+
+

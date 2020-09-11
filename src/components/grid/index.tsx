@@ -36,7 +36,7 @@ const Grid: FunctionComponent<GridProps> = ({formatter, preference}) => {
       setData(data);
     }, [data]);
     return <>
-    <div className="grid-filter">{`${Labels('filter')}`}: <input type="text" value={filterValue} onChange={(e) => doFilterCb(e)} placeholder={`${Labels('filterPlaceholder')}`}  /></div>
+    <div className="grid-filter">{`${Labels('filter')}`}: <input type="text" data-testid="filter" value={filterValue} onChange={(e) => doFilterCb(e)} placeholder={`${Labels('filterPlaceholder')}`}  /></div>
     <table>
           <thead>
             <tr>

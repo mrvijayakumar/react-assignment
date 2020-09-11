@@ -22,36 +22,9 @@ exports[`render correctly 1`] = `
       >
         ×
       </span>
-      <p>
-        <strong>
-          Country Name :
-        </strong>
-         undefined
-      </p>
-      <p>
-        <strong>
-          Capital :
-        </strong>
-         undefined
-      </p>
-      <p>
-        <strong>
-          Population :
-        </strong>
-         undefined
-      </p>
-      <p>
-        <strong>
-          Language :
-        </strong>
-         
-      </p>
-      <p>
-        <strong>
-          Currency :
-        </strong>
-         
-      </p>
+      <div
+        class="content"
+      />
       <p
         style="text-align: center;"
       >

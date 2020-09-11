@@ -19620,6 +19620,25 @@ const props = {
       "gridUniqueId": "numericCode"
     }
   };
+
+test('capture render DOM' , () => {
+    const { asFragment } = render(<Grid {...props} />);
+    expect(asFragment( <Grid {...props} />)).toMatchSnapshot();
+});
+
 test('render correctly' , () => {
     render(<Grid  {...props} />)
 })
+
+test('Check filter Functionality ' , async () => {
+  render(<Grid  {...props} />)
+  const inputNode = screen.getByTestId('filter', { selector: 'input' })
+  fireEvent.change(inputNode , {target : {value: 'Andorra' }});
+  const searchRecord = await screen.findAllByText('Andorra');
+  expect(searchRecord.length).toBe(1);
+
+  fireEvent.change(inputNode , {target : {value: '' }});
+  const fullRecord = await document.querySelectorAll('tbody tr')
+  expect(fullRecord.length).toBe(250);
+})
+
