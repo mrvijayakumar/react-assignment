@@ -15,11 +15,16 @@ export function doFilter(data : any, value : any) {
     });
     return filteredData;
 }
-export function pluck(obj : any, name : string) {
-    let result = [];
-    for(let i in obj){
-        if(obj[i].hasOwnProperty(name)){
-            result.push(obj[i][name]);
+export function pluck(obj : any, name : any) { 
+    const isArray = Array.isArray(name), result = [];
+    for(let row in obj){
+        if(isArray) {
+            const tempObj = {} as any;
+            for(let col in name){
+                if(obj[row].hasOwnProperty([name[col]]))
+                    tempObj[name[col]] = obj[row][name[col]];
+            }
+            Object.keys(tempObj).length !== 0 && result.push(tempObj);
         }
     }
     return result;

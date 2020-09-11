@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import {pluck} from '../../utils';
+import React, {useState, useEffect, FunctionComponent} from 'react';
 import {Labels} from '../../languages';
 import  './style.css';
-const Modal = (props : any) => {
-    const {open, data} = props;
-    const {capital, languages, currencies, population, name} = data;
-    const language = pluck(languages || [], 'name');
-    const currency = pluck(currencies || [], 'name');
+type ModalProps = {
+    open: boolean,
+    data: string
+  }
+const Modal: FunctionComponent<ModalProps> = ({open, data}) => {
     const [isOpen, setOpen] = useState<boolean>(false);
     useEffect(() => {
         setOpen(open);
@@ -18,11 +17,7 @@ const Modal = (props : any) => {
         <div className={`modal ${isOpen ? "show-modal" : ""}`}>
             <div className="modal-content">
                 <span className="close-button" onClick={onCloseButtonClick}>×</span>
-                <p><strong>{`${Labels('country')}`} :</strong> {`${name}`}</p>
-                <p><strong>{`${Labels('capital')}`} :</strong> {`${capital}`}</p>
-                <p><strong>{`${Labels('population')}`} :</strong> {`${population}`}</p>
-                <p><strong>{`${Labels('language')}`} :</strong> {`${language}`}</p>
-                <p><strong>{`${Labels('currency')}`} :</strong> {`${currency}`}</p>
+                <div className="content" dangerouslySetInnerHTML={{__html: data}}></div>                
                 <p style={{'textAlign': 'center'}}><button type="button" onClick={onCloseButtonClick} className="btn">{`${Labels('ok')}`}</button></p>
             </div>
         </div>
